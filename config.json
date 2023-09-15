@@ -1,18 +1,19 @@
 {
     "poolHost": "your.pool.host",
 	
-    "coin": "Pine Tree Shilling 1652",
-    "symbol": "P1652",
-    "coinUnits": 1000000,
-    "coinDecimalPlaces": 6,
-    "coinDifficultyTarget": 30,
-    "blockchainExplorer": "https://explorer.74.208.182.138/block.html?hash={id}",
-    "transactionExplorer": "https://explorer.74.208.182.138/transaction.html?hash={id}",
-
-    "daemonType": "bytecoin",
-    "cnAlgorithm": "cryptonight_light",
-    "cnVariant": 1,
-    "cnBlobType": 2,
+	"coin": "Pepenet",
+	"symbol": "PEPENET",
+	"coinUnits": 1000000000000,
+	"coinDecimalPlaces": 4,
+	"coinDifficultyTarget": 120,
+	"blockchainExplorer": "https://explorer.pepenet.org/show_block.php?block={id}",
+	"transactionExplorer": "https://explorer.pepenet.org/show_transaction.php?tx={id}",
+	"daemonType": "default",
+	"cnAlgorithm": "cryptonight",
+	"cnVariant": 0,
+	"cnBlobType": 0,
+	"includeHeight": false,
+	"isRandomX": false,
 
     "logging": {
         "files": {
@@ -25,7 +26,7 @@
             "colors": true
         }
     },
-    "hashingUtil": true,
+    "hashingUtil": false,
     "childPools": null,
     "poolServer": {
         "enabled": true,
@@ -41,39 +42,27 @@
         "ports": [
             {
                 "port": 3333,
-                "difficulty": 500,
+                "difficulty": 500000,
                 "desc": "Low end hardware"
             },
             {
                 "port": 4444,
-                "difficulty": 1500,
+                "difficulty": 1500000,
                 "desc": "Mid range hardware"
             },
             {
                 "port": 5555,
-                "difficulty": 2500,
+                "difficulty": 2500000,
                 "desc": "High end hardware"
             },
             {
                 "port": 7777,
-                "difficulty": 50000,
-                "desc": "Cloud-mining / NiceHash"
-            },
-            {
-                "port": 8888,
-                "difficulty": 2500,
-                "desc": "Hidden port",
-                "hidden": true
-            },
-            {
-                "port": 9999,
-                "difficulty": 2000,
-                "desc": "SSL connection",
-                "ssl": true
+                "difficulty": 5000000,
+                "desc": "Asic X3 A8"
             }
         ],
         "varDiff": {
-            "minDiff": 5000,
+            "minDiff": 50000,
             "maxDiff": 100000000,
             "targetTime": 30,
             "retargetTime": 30,
@@ -81,12 +70,12 @@
             "maxJump": 100
         },
         "paymentId": {
-            "addressSeparator": "+"
+            "addressSeparator": "."
         },
 	"separators": [{"value":"+","desc":"plus"}, {"value":".","desc":"dot"}],
         "fixedDiff": {
             "enabled": true,
-            "addressSeparator": "."
+            "addressSeparator": "+"
         },
         "shareTrust": {
             "enabled": true,
@@ -112,24 +101,24 @@
     "payments": {
         "enabled": true,
         "interval": 600,
-        "maxAddresses": 50,
-        "mixin": 3,
+        "maxAddresses": 15,
+        "mixin": 0,
         "priority": 0,
-        "transferFee": 50,
+        "transferFee": 5000000000,
         "dynamicTransferFee": true,
         "minerPayFee" : true,
-        "minPayment": 10000,
-        "maxTransactionAmount": 100000000,
-        "denomination": 100
+        "minPayment": 100000000000,
+        "maxTransactionAmount": 100000000000000,
+        "denomination": 1000000000000
     },
 
     "blockUnlocker": {
         "enabled": true,
         "interval": 30,
-        "depth": 40,
+        "depth": 60,
         "poolFee": 1,
         "devDonation": 0.2,
-        "networkFee": 0.2,
+        "networkFee": 0.0,
         "fixBlockHeightRPC": false
     },
 
@@ -152,12 +141,12 @@
 
     "daemon": {
         "host": "127.0.0.1",
-        "port": 4242
+        "port": 18081
     },
 
     "wallet": {
         "host": "127.0.0.1",
-        "port": 4243
+        "port": 18082
     },
 
     "redis": {
@@ -284,13 +273,13 @@
                 "maximumPeriod": 604800
             },
             "price": {
-                "enabled": true,
+                "enabled": false,
                 "updateInterval": 1800,
                 "stepInterval": 10800,
                 "maximumPeriod": 604800
             },
             "profit": {
-                "enabled": true,
+                "enabled": false,
                 "updateInterval": 1800,
                 "stepInterval": 10800,
                 "maximumPeriod": 604800
